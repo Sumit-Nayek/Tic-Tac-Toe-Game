@@ -33,7 +33,7 @@ if st.sidebar.button("Reset"):
     st.session_state.board = create_empty_board()
     st.session_state.game_over = False
     st.session_state.message = "Your turn (X)!"
-    st.experimental_rerun()
+    st.rerun()
 
 # ------------------------
 # AI first move (if AI starts)
