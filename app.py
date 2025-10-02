@@ -2,7 +2,7 @@ import streamlit as st
 from game.logic import (create_empty_board, check_winner, is_draw, available_moves)
 from game.ai import best_move
 # At the top, add import
-from game.ai import ai_move, heuristic_ai_move
+# from game.ai import ai_move, heuristic_ai_move
 
 st.set_page_config(page_title="Tic-Tac-Toe AI", layout="centered")
 st.title("🎮 Tic-Tac-Toe — Play vs AI")
