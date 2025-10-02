@@ -64,7 +64,7 @@ def minimax(board: Board, is_maximizing: bool) -> int:
 # Find Best Move for AI
 # -----------------------------
 
-def ai_move(board: Board) -> Optional[int]:
+def best_move(board: Board) -> Optional[int]:
     moves = available_moves(board)
     if not moves:
         return None
