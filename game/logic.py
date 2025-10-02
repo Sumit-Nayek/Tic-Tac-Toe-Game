@@ -17,16 +17,16 @@ WIN_LINES = [
 ]
 
 def create_empty_board() -> Board:
-return [""] * 9
+  return [""] * 9
 
 def available_moves(board: Board) -> List[int]:
-return [i for i, v in enumerate(board) if v == ""]
+  return [i for i, v in enumerate(board) if v == ""]
 
 def check_winner(board: Board, player: str) -> bool:
-for line in WIN_LINES:
-if all(board[pos] == player for pos in line):
-return True
-return False
+  for line in WIN_LINES:
+    if all(board[pos] == player for pos in line):
+      return True
+  return False
 
 def is_draw(board: Board) -> bool:
-return all(cell != "" for cell in board)
+  return all(cell != "" for cell in board)
