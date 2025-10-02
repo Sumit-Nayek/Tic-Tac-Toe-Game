@@ -34,7 +34,7 @@ if st.sidebar.button("Reset"):
 
 # If AI starts, let it make the first move (only once after a reset or setting change)
 if not st.session_state.human_starts and not st.session_state.game_over and all(cell == "" for cell in st.session_state.board):
-ai_choice = best_move(st.session_state.board)
+    ai_choice = best_move(st.session_state.board)
 if ai_choice is not None:
     st.session_state.board[ai_choice] = "O"
 
