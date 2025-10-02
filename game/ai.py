@@ -10,47 +10,46 @@ Board = List[str]
 def minimax(board: Board, is_maximizing: bool) -> int:
 # Terminal states
 if check_winner(board, "O"):
-return 1
+    return 1
 if check_winner(board, "X"):
-return -1
+    return -1
 if is_draw(board):
-return 0
+    return 0
 
 if is_maximizing:
-best_score = -999
-for move in available_moves(board):
-board[move] = "O"
-score = minimax(board, False)
-board[move] = ""
-if score > best_score:
-best_score = score
-return best_score
-else:
-best_score = 999
-for move in available_moves(board):
-board[move] = "X"
-score = minimax(board, True)
-board[move] = ""
-if score < best_score:
-best_score = score
-return best_score
+    best_score = -999
+    for move in available_moves(board):
+        board[move] = "O"
+        score = minimax(board, False)
+        board[move] = ""
+        if score > best_score:
+            best_score = score
+            return best_score
+        else:
+            best_score = 999
+            for move in available_moves(board):
+                board[move] = "X"
+                score = minimax(board, True)
+                board[move] = ""
+                if score < best_score:
+                    best_score = score
+                    return best_score
 
 
 def best_move(board: Board) -> Optional[int]:
-moves = available_moves(board)
-if not moves:
-return None
-best_score = -999
-choice = None
-for m in moves:
-board[m] = "O"
-score = minimax(board, False)
-board[m] = ""
-if score > best_score:
-best_score = score
-choice = m
-
-return choice
+    moves = available_moves(board)
+    if not moves:
+        return None
+    best_score = -999
+    choice = None
+    for m in moves:
+        board[m] = "O"
+        score = minimax(board, False)
+        board[m] = ""
+    if score > best_score:
+        best_score = score
+        choice = m
+        return choice
 import random
 from .logic import check_winner
 
