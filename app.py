@@ -46,8 +46,8 @@ for i in range(9):
 disabled = (st.session_state.board[i] != "") or st.session_state.game_over
 if cols[i % 3].button(label, key=str(i), disabled=disabled):
 # Human move
-if not st.session_state.game_over and st.session_state.board[i] == "":
-st.session_state.board[i] = "X"
+    if not st.session_state.game_over and st.session_state.board[i] == "":
+    st.session_state.board[i] = "X"
 
 # Check human win
 if check_winner(st.session_state.board, "X"):
