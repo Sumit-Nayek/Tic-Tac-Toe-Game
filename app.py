@@ -82,7 +82,7 @@ for i in range(9):
                     st.session_state.game_over = True
 
             # Trigger rerun to refresh the UI
-            st.experimental_rerun()
+            st.rerun()
 
 # ------------------------
 # Display board + status
