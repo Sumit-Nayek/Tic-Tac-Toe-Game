@@ -47,27 +47,27 @@ disabled = (st.session_state.board[i] != "") or st.session_state.game_over
 if cols[i % 3].button(label, key=str(i), disabled=disabled):
 # Human move
     if not st.session_state.game_over and st.session_state.board[i] == "":
-    st.session_state.board[i] = "X"
+        st.session_state.board[i] = "X"
 
 # Check human win
 if check_winner(st.session_state.board, "X"):
-st.session_state.message = "🎉 You win!"
-st.session_state.game_over = True
+    st.session_state.message = "🎉 You win!"
+    st.session_state.game_over = True
 elif is_draw(st.session_state.board):
-st.session_state.message = "😐 It's a draw!"
-st.session_state.game_over = True
+    st.session_state.message = "😐 It's a draw!"
+    st.session_state.game_over = True
 else:
 # AI move
-ai_choice = best_move(st.session_state.board)
+    ai_choice = best_move(st.session_state.board)
 if ai_choice is not None:
-st.session_state.board[ai_choice] = "O"
+    st.session_state.board[ai_choice] = "O"
 
 if check_winner(st.session_state.board, "O"):
-st.session_state.message = "🤖 AI wins!"
-st.session_state.game_over = True
+    st.session_state.message = "🤖 AI wins!"
+    st.session_state.game_over = True
 elif is_draw(st.session_state.board):
-st.session_state.message = "😐 It's a draw!"
-st.session_state.game_over = True
+    st.session_state.message = "😐 It's a draw!"
+    st.session_state.game_over = True
 
 # Show board state visually as a simple grid of symbols below the buttons (read-only)
 st.markdown("---")
