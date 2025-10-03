@@ -35,6 +35,4 @@ tic-tac-toe-streamlit/
 * **`requirements.txt`** → For reproducibility (`streamlit==1.x`, etc.).
 * **`README.md`** → Explains how to run, features, screenshots, etc.
 
-👉 This way, the repo looks professional, modular, and easy to extend (like adding another game later).
 
-Would you like me to also **write a sample `README.md`** for this repo with features, setup, and screenshots section?
